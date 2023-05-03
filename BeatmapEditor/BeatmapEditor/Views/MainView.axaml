@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:BeatmapEditor.Views"
+             xmlns:viewModels="clr-namespace:BeatmapEditor.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="BeatmapEditor.Views.MainView"
+             Foreground="White"
+             Background="#171C2C">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<viewModels:MainViewModel />
+	</Design.DataContext>
+
+	<Panel>
+		<StackPanel>
+			<Menu>
+				<MenuItem Header="File">
+					<MenuItem Header="Open beatmap folder"/>
+					<MenuItem Header="Save"/>
+					<MenuItem Header="Export"/>
+					<MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+				</MenuItem>
+			</Menu>
+			<TabControl>
+				<TabItem Header="Setup">
+					<ScrollViewer Focusable="True" Background="#01000000">
+						<StackPanel Margin="5" Spacing="5">
+							<StackPanel.Styles>
+								<Style Selector="Border">
+									<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
+								</Style>
+							</StackPanel.Styles>
+							<Panel Margin="-5" DragDrop.AllowDrop="True" Background="#01000000">
+								<!--Fill the container-->
+								<Image Height="200" Stretch="UniformToFill" Source="{Binding Background,Mode=OneWay}"/>
+								<TextBlock Text="Drag a image here to replace the bg." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Panel>
+							<!--Bg preview-->
+							<Border CornerRadius="5" Background="#1B2133" Padding="10">
+								<StackPanel Spacing="10">
+									<TextBlock Text="General" FontSize="24"/>
+									<Border CornerRadius="5" Background="#212840" Padding="5">
+										<StackPanel>
+											<TextBlock Text="Audio file" Margin="5"/>
+											<local:FilePicker FileName="{Binding AudioFile,Mode=TwoWay}"/>
+										</StackPanel>
+									</Border>
+									<Border CornerRadius="5" Background="#212840" Padding="5">
+										<StackPanel>
+											<TextBlock Text="Background image" Margin="5"/>
+											<local:FilePicker/>
+										</StackPanel>
+									</Border>
+								</StackPanel>
+							</Border>
+						</StackPanel>
+					</ScrollViewer>
+				</TabItem>
+				<TabItem Header="View">
+					
+				</TabItem>
+				<TabItem Header="Compose">
+
+				</TabItem>
+				<TabItem Header="Design">
+
+				</TabItem>
+				<TabItem Header="Validation">
+
+				</TabItem>
+				<TabItem Header="Settings">
+					
+				</TabItem>
+				<TabItem Header="Debug">
+					<local:DebugView/>
+				</TabItem>
+			</TabControl>
+		</StackPanel>
+	</Panel>
+</UserControl>

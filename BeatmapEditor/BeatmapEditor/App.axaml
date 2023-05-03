@@ -1,0 +1,32 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:BeatmapEditor"
+			 xmlns:local2="using:BeatmapEditor.Views"
+             x:Class="BeatmapEditor.App">
+	<Application.DataTemplates>
+		<local:ViewLocator/>
+	</Application.DataTemplates>
+
+	<Application.Styles>
+		<FluentTheme Mode="Dark"/>
+		<Style Selector="local2|FilePicker">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="local2:FilePicker">
+						<StackPanel>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="auto"/>
+								</Grid.ColumnDefinitions>
+								<TextBox Name="PART_PathBox" Margin="5" Grid.Column="0" AcceptsTab="False" AcceptsReturn="False" UndoLimit="5"/>
+								<Button Name="PART_OpenButton" Content="Open..." Grid.Column="1"/>
+							</Grid>
+							<TextBlock Name="PART_NotExistsTip" Text="File does not exist." Foreground="Yellow"/>
+						</StackPanel>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Application.Styles>
+</Application>

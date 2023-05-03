@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatmapEditor", "BeatmapEditor\BeatmapEditor\BeatmapEditor.csproj", "{AF3F39D5-589C-4C5A-B94F-ED838F99262C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatmapEditor.Android", "BeatmapEditor\BeatmapEditor.Android\BeatmapEditor.Android.csproj", "{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatmapEditor.Desktop", "BeatmapEditor\BeatmapEditor.Desktop\BeatmapEditor.Desktop.csproj", "{477EEDB9-8ADD-4A2C-8E97-2914BEC76DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatmapEditor.iOS", "BeatmapEditor\BeatmapEditor.iOS\BeatmapEditor.iOS.csproj", "{0230837C-9C9B-48B7-B672-8DAA04B46162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeatmapEditor.Web", "BeatmapEditor\BeatmapEditor.Web\BeatmapEditor.Web.csproj", "{6DB5A9A5-0BDB-45FD-B5C7-1BF7C8F66C0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF3F39D5-589C-4C5A-B94F-ED838F99262C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3F39D5-589C-4C5A-B94F-ED838F99262C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3F39D5-589C-4C5A-B94F-ED838F99262C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3F39D5-589C-4C5A-B94F-ED838F99262C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810BD16A-A123-4D5A-BC69-6DE86DBEB1CA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{477EEDB9-8ADD-4A2C-8E97-2914BEC76DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477EEDB9-8ADD-4A2C-8E97-2914BEC76DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477EEDB9-8ADD-4A2C-8E97-2914BEC76DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477EEDB9-8ADD-4A2C-8E97-2914BEC76DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0230837C-9C9B-48B7-B672-8DAA04B46162}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6DB5A9A5-0BDB-45FD-B5C7-1BF7C8F66C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB5A9A5-0BDB-45FD-B5C7-1BF7C8F66C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB5A9A5-0BDB-45FD-B5C7-1BF7C8F66C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB5A9A5-0BDB-45FD-B5C7-1BF7C8F66C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E1F11CB-13F8-4D36-A8E5-969FE6FD719A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:BeatmapEditor.Views;assembly=BeatmapEditor"
+             xmlns:viewModels="clr-namespace:BeatmapEditor.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="BeatmapEditor.Views.DebugView">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<viewModels:DebugViewModel/>
+	</Design.DataContext>
+
+	<Grid>
+		<StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+			<TextBlock>
+				Device:
+			</TextBlock>
+			<ComboBox Items="{Binding Devices,Mode=OneWay}" SelectedItem="{Binding SelectedDevice,Mode=TwoWay}" Width="800"/>
+			<TextBlock Text="Volume:"/>
+			<Slider Width="800" TickFrequency="0.05" Minimum="0" Maximum="1" TickPlacement="BottomRight" SmallChange="0.01" Value="{Binding Volume}"/>
+			<TextBlock Text="Playback rate:"/>
+			<Slider Width="800" TickFrequency="0.05" Minimum="0.5" Maximum="2" TickPlacement="BottomRight" SmallChange="0.01" Value="{Binding PlaybackRate}"/>
+			<TextBlock Text="Progress:"/>
+			<Slider Width="800" TickFrequency="5" Minimum="0" TickPlacement="BottomRight" Maximum="{Binding Duration}" Value="{Binding	Current}"/>
+			<Button Content="Play test audio" Command="{Binding TestAudioCommand}"/>
+			<Button Content="Pause" Command="{Binding PauseAudio}"/>
+			<Button Content="Stop" Command="{Binding StopAudio}"/>
+			<Button Content="Tap to play sample" Command="{Binding TestSampleCommand}"/>
+			<Button Content="Compress samples to display" Command="{Binding SaveWave}"/>
+			<ScrollViewer Width="800" Height="200" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Offset="{Binding OffsetView}" IsHitTestVisible="False">
+				<Path Fill="AliceBlue" Opacity=".75">
+					<Path.Data>
+						<PolylineGeometry IsFilled="True" Points="{Binding WavePoints,Mode=TwoWay}"/>
+					</Path.Data>
+				</Path>
+			</ScrollViewer>
+			<local:WaveView Width="800" Height="200" AudioData="{Binding	AudioData}" Fill="AliceBlue" Stroke="#30FFFFFF" StrokeThickness="1" Opacity=".75"/>
+			<TextBlock>
+				<Run Text="{Binding Current,Mode=OneWay}"/><LineBreak/>
+				/
+				<Run Text="{Binding Duration,Mode=OneWay}"/>
+				(<Run Text="{Binding PlaybackRate,Mode=OneWay}"/>x)
+			</TextBlock>
+		</StackPanel>
+		<Slider Height="500" Width="50" Orientation="Vertical" TickFrequency="0.05" TickPlacement="BottomRight" HorizontalAlignment="Right" IsHitTestVisible="False" Maximum="1" Value="{Binding AudioLoudness}" VerticalAlignment="Top"/>
+	</Grid>
+</UserControl>
