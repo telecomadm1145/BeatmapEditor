@@ -19,8 +19,8 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
     - name: Restore dependencies
-      run: dotnet restore BeatmapEditor.Desktop
+      run: dotnet restore BeatmapEditor/BeatmapEditor.Desktop
     - name: Build
-      run: dotnet build BeatmapEditor.Desktop --no-restore
+      run: dotnet build BeatmapEditor/BeatmapEditor.Desktop --no-restore
     - name: Test
-      run: dotnet test BeatmapEditor.Desktop --no-build --verbosity normal
+      run: dotnet test BeatmapEditor/BeatmapEditor.Desktop --no-build --verbosity normal
