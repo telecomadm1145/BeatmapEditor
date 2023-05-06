@@ -18,13 +18,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0.x
-    - name: Setup .NET workloads
-      run: dotnet workload restore
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore BeatmapEditor.Desktop
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build BeatmapEditor.Desktop --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test BeatmapEditor.Desktop --no-build --verbosity normal
